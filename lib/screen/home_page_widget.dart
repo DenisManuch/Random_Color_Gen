@@ -2,7 +2,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:random_color_generation_app/src/constans.dart';
 
-
 ///
 class HomePageWidget extends StatefulWidget {
   ///
@@ -16,16 +15,21 @@ class HomePageWidget extends StatefulWidget {
 
 class _HomePageState extends State<HomePageWidget> {
   Color _correntColor = kBackgroundColor;
+  Color correntTextColor = kPrimaryColor;
 
   final int _randomNumber = 256;
   void updateColor() {
     setState(() {
       final _random = Random();
+      final _randomR = Random();
+      final _randomG = Random();
+      final _randomB = Random();
+      
       _correntColor = Color.fromARGB(
         _random.nextInt(_randomNumber),
-        _random.nextInt(_randomNumber),
-        _random.nextInt(_randomNumber),
-        _random.nextInt(_randomNumber),
+        _randomR.nextInt(_randomNumber),
+        _randomG.nextInt(_randomNumber),
+        _randomB.nextInt(_randomNumber),
       );
     });
   }
@@ -63,7 +67,6 @@ class _HomePageState extends State<HomePageWidget> {
           onTap: () => updateColor(),
         ),
       ),
-      //backgroundColor: correntColor, //Theme.of(context).backgroundColor,
     );
   }
 }
