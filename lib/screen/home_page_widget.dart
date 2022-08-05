@@ -14,22 +14,22 @@ class HomePageWidget extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePageWidget> {
-  Color _correntColor = kBackgroundColor;
+  Color correntColor = kBackgroundColor;
   Color correntTextColor = kPrimaryColor;
 
   final int _randomNumber = 256;
   void updateColor() {
     setState(() {
+      final List<int> _randomList = [0, 0, 0, 0];
       final _random = Random();
-      final _randomR = Random();
-      final _randomG = Random();
-      final _randomB = Random();
-      
-      _correntColor = Color.fromARGB(
-        _random.nextInt(_randomNumber),
-        _randomR.nextInt(_randomNumber),
-        _randomG.nextInt(_randomNumber),
-        _randomB.nextInt(_randomNumber),
+      for (int i = 0; i < _randomList.length; i++) {
+        _randomList[i] = _random.nextInt(_randomNumber);
+      }
+      correntColor = Color.fromARGB(
+        _randomList.first,
+        _randomList[1],
+        _randomList[2],
+        _randomList[3],
       );
     });
   }
@@ -45,12 +45,12 @@ class _HomePageState extends State<HomePageWidget> {
             fontSize: 25,
           ),
         ),
-        backgroundColor: _correntColor,
+        backgroundColor: correntColor,
       ),
       body: Center(
         child: GestureDetector(
           child: Container(
-            color: _correntColor,
+            color: correntColor,
             key: const Key('Heythere'),
             alignment: Alignment.center,
             width: double.infinity,
