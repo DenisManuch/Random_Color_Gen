@@ -14,9 +14,6 @@ class HomePageWidget extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePageWidget> {
-  Color correntColor = kBackgroundColor;
-  Color correntTextColor = kPrimaryColor;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,18 +25,19 @@ class _HomePageState extends State<HomePageWidget> {
             fontSize: 25,
           ),
         ),
-        backgroundColor: correntColor,
+        backgroundColor: kBackgroundColor,
       ),
       body: Center(
         child: GestureDetector(
           child: Container(
-            color: correntColor,
+            color: kBackgroundColor,
             key: const Key('Heythere'),
             alignment: Alignment.center,
             width: double.infinity,
             height: double.infinity,
             child: const Text(
               mainText,
+              key: Key('text'),
               style: TextStyle(
                 color: kPrimaryColor,
                 fontSize: 50,
@@ -48,8 +46,8 @@ class _HomePageState extends State<HomePageWidget> {
             ),
           ),
           onTap: () => setState(() {
-            correntColor = updateColors();
-          }), //updateColors(),
+            kBackgroundColor = updateColors();
+          }),
         ),
       ),
     );

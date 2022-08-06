@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 //===== COLORS ==========
 
 /// Primary Color
-const Color kPrimaryColor = Color.fromARGB(255, 255, 255, 255);
+const Color kPrimaryColor = Colors.white;
 
 ///Background Color
-const Color kBackgroundColor = Colors.red;
+Color kBackgroundColor = Colors.red;
 
 //===== TEXT ==========
 
