@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:random_color_generation_app/src/constans.dart';
 import 'package:random_color_generation_app/src/update_colors.dart';
 
+
 ///
 class HomePageWidget extends StatefulWidget {
   ///
@@ -15,6 +16,7 @@ class HomePageWidget extends StatefulWidget {
 
 class _HomePageState extends State<HomePageWidget> {
   @override
+ 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
