@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 /// Primary Color
 const Color kPrimaryColor = Colors.white;
 
-///Background Color
-Color kBackgroundColor = Colors.red;
 
 //===== TEXT ==========
 

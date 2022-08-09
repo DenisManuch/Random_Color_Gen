@@ -27,12 +27,12 @@ class _HomePageState extends State<HomePageWidget> {
             fontSize: 25,
           ),
         ),
-        backgroundColor: kBackgroundColor,
+        backgroundColor: updateColors(),
       ),
       body: Center(
         child: GestureDetector(
           child: Container(
-            color: kBackgroundColor,
+            color: updateColors(),
             key: const Key('Heythere'),
             alignment: Alignment.center,
             width: double.infinity,
@@ -47,8 +47,9 @@ class _HomePageState extends State<HomePageWidget> {
               ),
             ),
           ),
+          // ignore: no-empty-block
           onTap: () => setState(() {
-            kBackgroundColor = updateColors();
+            
           }),
         ),
       ),

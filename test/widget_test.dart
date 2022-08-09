@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:random_color_generation_app/screen/main_screen.dart';
-import 'package:random_color_generation_app/src/constans.dart';
+import 'package:random_color_generation_app/src/update_colors.dart';
 
 void main() {
   testWidgets('Color comparison test', (WidgetTester tester) async {
@@ -16,7 +16,7 @@ void main() {
       expect(
         (tester.firstWidget(find.byKey(const Key('Heythere'))) as Container)
             .color,
-        kBackgroundColor,
+        updateColors(),
       );
       await tester.tap(find.byKey(const Key('Heythere')));
       await tester.pumpWidget(const MainScreen());
