@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:random_color_generation_app/src/update_colors.dart';
 
 //===== COLORS ==========
 
@@ -6,7 +7,7 @@ import 'package:flutter/material.dart';
 const Color kPrimaryColor = Colors.white;
 
 ///Background Color
-Color kBackgroundColor = Colors.red;
+Color kBackgroundColor = updateColors();
 
 //===== TEXT ==========
 
