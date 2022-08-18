@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:random_color_generation_app/src/constans.dart';
 import 'package:random_color_generation_app/src/update_colors.dart';
 
-
 ///
 class HomePageWidget extends StatefulWidget {
   ///
   final String title;
+
 
   ///
   const HomePageWidget({Key? key, required this.title}) : super(key: key);
@@ -15,8 +15,10 @@ class HomePageWidget extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePageWidget> {
+
+Color _textColor = Colors.white;
+
   @override
- 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -37,11 +39,11 @@ class _HomePageState extends State<HomePageWidget> {
             alignment: Alignment.center,
             width: double.infinity,
             height: double.infinity,
-            child: const Text(
+            child: Text(
               mainText,
               key: Key('text'),
               style: TextStyle(
-                color: kPrimaryColor,
+                color: _textColor,
                 fontSize: 50,
                 decoration: TextDecoration.none,
               ),
@@ -49,9 +51,20 @@ class _HomePageState extends State<HomePageWidget> {
           ),
           onTap: () => setState(() {
             kBackgroundColor = updateColors();
+            _textColor = ThemeData.estimateBrightnessForColor(kBackgroundColor) ==
+                    Brightness.light
+                ? Colors.black
+                : Colors.white;
           }),
         ),
       ),
     );
   }
 }
+
+
+/*
+Color calculateTextColor(Color background) {
+  return Brightness.estimateBrightnessForColor(background) == Brightness.light ? Colors.black : Colors.white;
+}
+*/
